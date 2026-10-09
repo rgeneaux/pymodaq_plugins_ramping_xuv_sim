@@ -7,8 +7,8 @@ from pymodaq_utils.logger import set_logger, get_module_name
 from pymodaq.extensions.utils import CustomExt
 
 
-# todo: replace here *pymodaq_plugins_template* by your plugin package name
-from pymodaq_plugins_template.utils import Config as PluginConfig
+# todo: replace here *pymodaq_plugins_ramping_xuv_sim* by your plugin package name
+from pymodaq_plugins_ramping_xuv_sim.utils import Config as PluginConfig
 
 logger = set_logger(get_module_name(__file__))
 
