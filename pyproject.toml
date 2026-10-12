@@ -17,6 +17,7 @@ dependencies = [
     "pymodaq_gui>=5.2.0",
     "pymodaq_data>=5.2.0",
     "numpy",
+    "pymodaq_plugins_thorlabs",  # camera plugin used by the Thorlabs_TSI_FringeDelay delay reader
     #todo: list here all dependencies your package may have
 ]
 

@@ -248,9 +248,11 @@ class DelayBinner(CustomExt):
                 self.acquisition_done_signal.emit(dte)
 
     def _on_delay(self, dte: DataToExport):
-        for dwa in dte.get_data_from_dim('Data0D'):
-            self.binner.add_delay(dwa.timestamp, float(np.ravel(dwa[0])[0]))
-            self._dirty = True
+        for dwa in dte.get_data_from_dim('Data0D'):  # the first one is the delay
+            delay = float(np.ravel(dwa[0])[0])
+            if np.isfinite(delay):  # NaN when the delay reader does not see its fringes
+                self.binner.add_delay(dwa.timestamp, delay)
+                self._dirty = True
             return
 
     def _on_spectrum(self, dte: DataToExport):
